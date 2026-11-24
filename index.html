@@ -292,6 +292,49 @@ input,textarea,select{font-size:16px}
 .pager{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:22px 0 4px}
 .pgb{border:1px solid var(--g7);background:var(--surf);color:var(--g7);padding:8px 16px;border-radius:999px;font:inherit;font-weight:700;cursor:pointer;min-height:40px}
 .pgb.on{background:var(--g7);color:#fff}
+
+/* ===== নতুন: ডেলিভারি ঠিকানা, সামারি, গ্যালারি, FAQ, ট্রাস্ট ===== */
+select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--surf);color:var(--text);font:inherit;font-size:16px}
+select:disabled{opacity:.6;cursor:not-allowed}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+@media(max-width:560px){.two{grid-template-columns:1fr}}
+.lstat{text-align:center;font-size:.8rem;color:var(--muted);margin:8px 0 0}
+.osum{margin-top:18px;padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--g1)}
+.osum h3{margin:0 0 8px;color:var(--g9);font-size:1.1rem}
+.osum .r{display:flex;justify-content:space-between;gap:10px;margin-top:6px}
+.osum .gt{margin-top:10px;padding-top:10px;border-top:1px dashed var(--g7);font-size:1.2rem;font-weight:800;color:var(--g9)}
+.osum p{font-size:.78rem;color:var(--muted);margin:8px 0 0}
+.tr{background:var(--surf);border-bottom:1px solid var(--line);padding:16px 0}
+.tg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ti{text-align:center;padding:8px 6px}.ti b{display:block;color:var(--g9);font-size:.98rem}.ti small{color:var(--muted)}
+@media(max-width:759px){.tg{grid-template-columns:repeat(2,1fr)}}
+.sh{text-align:center;margin-bottom:6px}
+.gx{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gx figure{margin:0;background:var(--surf);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 8px 24px rgba(20,83,45,.08)}
+.gx .im{overflow:hidden;background:var(--g1)}
+.gx img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;cursor:zoom-in;transition:transform .35s}
+.gx figure:hover img{transform:scale(1.05)}
+.gx figcaption{padding:11px 16px;font-weight:600;color:var(--text)}
+@media(max-width:759px){.gx{grid-template-columns:repeat(2,1fr);gap:10px}.gx figure{border-radius:16px}.gx figcaption{font-size:.85rem;padding:9px 12px}}
+.gcta{text-align:center;margin-top:26px}
+.lbx{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:40;display:flex;align-items:center;justify-content:center;padding:16px}
+.lbx img{max-width:min(96vw,1000px);max-height:84vh;object-fit:contain;border-radius:14px}
+.lbx button{position:absolute;border:0;border-radius:50%;width:46px;height:46px;background:#fff;color:#14532d;font-size:1.6rem;line-height:1;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+.lbx .lx{top:16px;right:16px}.lbx .lp{left:12px;top:50%;transform:translateY(-50%)}.lbx .ln{right:12px;top:50%;transform:translateY(-50%)}
+.lbx .lc{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#fff;font-size:.9rem}
+.faq{max-width:760px;margin:0 auto;display:grid;gap:12px}
+.faq details{background:var(--surf);border:1.5px solid var(--line);border-radius:18px;padding:0 20px;transition:box-shadow .2s}
+.faq details[open]{box-shadow:0 8px 22px rgba(20,83,45,.12);border-color:var(--g7)}
+.faq summary{cursor:pointer;font-weight:700;color:var(--text);font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";flex:none;width:36px;height:36px;border-radius:50%;background:var(--g1);color:var(--g7);display:grid;place-items:center;font-size:1.5rem;line-height:1}
+.faq details[open] summary:after{content:"\2212";background:var(--g7);color:#fff}
+.faq details p{margin:0 0 16px;color:var(--muted)}
+.totop{position:fixed;right:14px;bottom:calc(84px + env(safe-area-inset-bottom,0px));width:48px;height:48px;border:0;border-radius:50%;background:var(--g7);color:#fff;font-size:1.4rem;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.3);z-index:7;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;transform:translateY(8px)}
+.totop.show{opacity:1;pointer-events:auto;transform:none}
+@media(min-width:760px){.totop{bottom:22px;right:22px}}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}.rv.in{opacity:1;transform:none}
+.sbadge{display:inline-block;background:var(--gold);color:#3b2a00;font-weight:800;font-size:.8rem;padding:3px 12px;border-radius:999px;margin-bottom:8px}
 </style>
  <script type="application/ld+json">
  {
@@ -306,6 +349,7 @@ input,textarea,select{font-size:16px}
 <!--
   ✏️ নিজে এডিট করার গাইড (সংক্ষেপে)
   • ফোন নম্বর, পেমেন্ট নম্বর ও ছাড়ের হার: নিচে স্ক্রিপ্ট অংশের একদম শুরুতে PHONE, PAYNO, DISC
+  • ডেলিভারি চার্জ (ঢাকার ভেতরে/আশেপাশে/বাইরে): "DELIVERY" লেখা খুঁজুন (Ctrl+F)
   • পণ্য, দাম ও ছবি: admin.html ফাইল ব্যবহার করুন (শুধু নিজের কম্পিউটারে, আপলোড করবেন না)
   • আমাদের সম্পর্কে পেজের লেখা: "ABOUT" লেখা কমেন্ট খুঁজুন (Ctrl+F)
   • ছবি ফাইলের একদম শেষে আছে, ওখানে হাত দেবেন না; ছবি বদলাতে চাইলে Claude-কে দিন
@@ -313,6 +357,7 @@ input,textarea,select{font-size:16px}
 <header><div class="w hd"><a class="hl" href="#top" aria-label="নিখুঁত অর্গানিক বিডি"><img data-img="hlogo" alt="নিখুঁত অর্গানিক বিডি" width="106" height="55"></a><div class="hm2"><a class="gb" href="#top">Nikhut Organic BD</a></div><a class="hc" href="#checkout" aria-label="কার্ট"><span class="ci">🛒</span><span class="ct2">কার্ট</span><b id="hcc">০</b></a></div></header>
 <noscript><div class="w"><h2>আমাদের পণ্য</h2><ul><li>খাঁটি গাওয়া ঘি — বিশুদ্ধ গাওয়া ঘি, সুগন্ধি ও দানাদার, রান্না ও পুষ্টিতে অতুলনীয়। (750 টাকা)</li><li>কালোজিরা ফুলের মধু — কালোজিরা ফুলের নির্যাস থেকে সংগৃহীত গাঢ় ও ঘন প্রাকৃতিক মধু। (700 টাকা)</li><li>লিচি ফুলের মধু — লিচি ফুলের হালকা মিষ্টি মধু, চিনির পরিবর্তে মধু খান। (500 টাকা)</li><li>অর্গানিক কালোজিরা তেল — কোল্ড প্রেসড, রিফাইন্ড নয়। ১০০% বিশুদ্ধ ও প্রাকৃতিক। (450 টাকা)</li><li>অর্গানিক চিয়া সিড — ওমেগা-৩ ও ফাইবার সমৃদ্ধ, কোনো কেমিক্যাল নেই। (350 টাকা)</li><li>গাওয়া ঘি (ফ্যামিলি জার) — ঐতিহ্যবাহী স্বাদের খাঁটি গাওয়া ঘি, পরিবারের জন্য বড় জার। (1400 টাকা)</li></ul><p>অর্ডার: 01744366000</p></div></noscript><main id="shop"><span id="top"></span><div class="srw"><div class="w srch"><button type="button" class="mcb" data-open="cat" aria-label="ক্যাটাগরি">☰</button><input id="q" type="search" placeholder="🔍 পণ্য খুঁজুন, যেমন: মধু, ঘি, তেল" aria-label="পণ্য খুঁজুন"></div></div>
 <section class="slw"><div class="w shl"><aside class="cs" id="cs"></aside><div class="sl" id="sl"><img data-img="b1" alt="নিখুঁত হানি নাটস"><img data-img="b2" alt="খাঁটি গুড়, প্রি-অর্ডার"><img data-img="b3" alt="ইমিউনিটি বুস্ট মধু"></div></div></section>
+<div class="tr"><div class="w tg"><div class="ti rv"><b>🌿 ১০০% খাঁটি</b><small>ভেজালমুক্ত পণ্য</small></div><div class="ti rv"><b>🚚 সারা বাংলাদেশে</b><small>নিরাপদ ডেলিভারি</small></div><div class="ti rv"><b>💵 ক্যাশ অন ডেলিভারি</b><small>বিকাশ • নগদ • রকেটও</small></div><div class="ti rv"><b>🤝 রিটার্নের সুযোগ</b><small>পছন্দ না হলে</small></div></div></div>
 <section id="offer" class="alt"><div class="w"><h2>🎁 কম্বো অফার</h2><div class="ofr"><img data-img="combo" alt="নিখুঁত অর্গানিক মধুর কম্বো অফার"><div><h3>নিখুঁত অর্গানিক মধুর কম্বো</h3><p>একসাথে ৪ ধরনের খাঁটি মধু, বিশেষ অফার মূল্যে। দাম ও বিস্তারিত জানতে সরাসরি মেসেজ করুন।</p><a class="btn gold wa" id="ofwa" href="#" target="_blank" rel="noopener">💬 অফারটি নিতে হোয়াটসঅ্যাপ করুন</a></div></div></div></section>
 <div id="brand" class="hero"><div class="panel">
 <div class="brand"><div class="plate"><img data-img="logo" alt="Nikhut Organic BD লোগো" width="640" height="369"></div>
@@ -334,11 +379,18 @@ im=p.img&&/^(data:|https?:)/.test(p.img)?'<img src="'+p.img+'" alt="'+nkEsc(p.na
 return'<article class="card" data-id="'+nkEsc(id)+'" data-name="'+nkEsc(p.name)+'" data-price="'+pr+'"'+(p.disc?"":" data-nodisc")+dv+' data-unit="'+nkEsc(un)+'">'+(p.disc?'<div class="dc"></div>':"")+im+"<h3>"+nkEsc(p.name)+"</h3><p>"+nkEsc(p.desc)+"</p>"+sel+'<div class="pr price"></div><button class="btn buy" type="button">এখনই কিনুন</button><button class="btn out add" type="button">🛒 কার্টে যোগ করুন</button></article>'}
 document.getElementById("pgrid").innerHTML=PDATA.map(nkCard).join("");
 </script></div></section>
-<section class="alt"><div class="w"><h2>আমাদের সংগ্রহের ঝলক</h2><p class="sub">খামার থেকে আপনার টেবিল পর্যন্ত</p><div class="gal"><img data-img="g0" alt="দানাদার ঘি" width="380" height="380" loading="lazy"><img data-img="g1" alt="ঘিয়ের জার" width="380" height="380" loading="lazy"><img data-img="g2" alt="বাটিতে ঘি" width="380" height="380" loading="lazy"><img data-img="g3" alt="ঘি চামচে" width="380" height="380" loading="lazy"><img data-img="g4" alt="মৌচাকের পাশে মধু" width="380" height="380" loading="lazy"><img data-img="g5" alt="মিক্স ড্রাই ফ্রুট ও নাটস" width="380" height="380" loading="lazy"></div></div></section>
-<section id="seasonal" class="alt"><div class="w"><h2>🌴 সিজনাল কালেকশন</h2><div class="ofr"><img data-img="gur" alt="খেজুরের গুড়"><div><h3>খাঁটি খেজুরের গুড়</h3><p>শীতের মিষ্টি আয়োজনে বৃহত্তর যশোরের খাঁটি গুড়। এখনই প্রি-অর্ডার করুন।</p><a class="btn gold wa" id="gwa" href="#" target="_blank" rel="noopener">💬 প্রি-অর্ডার করুন</a></div></div></div></section>
+<section class="alt" id="gallery"><div class="w"><div class="sh"><span class="tag">আমাদের সংগ্রহ</span></div><h2>আমাদের সংগ্রহের ঝলক</h2><p class="sub">খামার থেকে আপনার টেবিল পর্যন্ত — বড় করে দেখতে ছবিতে চাপ দিন</p><div class="gx" id="gx"><figure class="rv"><div class="im"><img data-img="g0" alt="দানাদার ঘি" width="380" height="285" loading="lazy"></div><figcaption>দানাদার ঘি</figcaption></figure><figure class="rv"><div class="im"><img data-img="g1" alt="ঘিয়ের জার" width="380" height="285" loading="lazy"></div><figcaption>ঘিয়ের জার</figcaption></figure><figure class="rv"><div class="im"><img data-img="g2" alt="বাটিতে ঘি" width="380" height="285" loading="lazy"></div><figcaption>বাটিতে ঘি</figcaption></figure><figure class="rv"><div class="im"><img data-img="g3" alt="ঘি চামচে" width="380" height="285" loading="lazy"></div><figcaption>ঘি চামচে</figcaption></figure><figure class="rv"><div class="im"><img data-img="g4" alt="মৌচাকের পাশে মধু" width="380" height="285" loading="lazy"></div><figcaption>মৌচাকের পাশে মধু</figcaption></figure><figure class="rv"><div class="im"><img data-img="g5" alt="মিক্স ড্রাই ফ্রুট ও নাটস" width="380" height="285" loading="lazy"></div><figcaption>মিক্স ড্রাই ফ্রুট ও নাটস</figcaption></figure></div><div class="gcta"><a class="btn gold" href="#products">পণ্য দেখুন ও অর্ডার করুন</a></div></div></section>
+<section id="seasonal" class="alt"><div class="w"><h2>🌴 সিজনাল কালেকশন</h2><div class="ofr"><img data-img="gur" alt="খেজুরের গুড়"><div><span class="sbadge">শীতের বিশেষ</span><h3>খাঁটি খেজুরের গুড়</h3><p>শীতের মিষ্টি আয়োজনে রাজশাহীর গাছি থেকে সরাসরি খাঁটি গুড়। এখনই প্রি-অর্ডার করুন।</p><a class="btn gold wa" id="gwa" href="#" target="_blank" rel="noopener">💬 প্রি-অর্ডার করুন</a></div></div></div></section>
 <section id="why"><div class="w"><h2 class="wt">কেন নিখুঁত অর্গানিক বিডি?</h2><p class="sub">আস্থা আমাদের সবচেয়ে বড় পুঁজি</p>
 <div class="feat"><div><b>🌿 ভেজালমুক্ত</b><br>খাঁটি উপাদান, কোনো ভেজাল নয়।</div><div><b>🔬 মান যাচাই</b><br>প্যাকেজিংয়ের আগে প্রতিটি ব্যাচ পরীক্ষিত।</div><div><b>🚚 দ্রুত ডেলিভারি</b><br>সারা বাংলাদেশে নিরাপদে পৌঁছে দেওয়া।</div><div class="wide"><b>🤝 বিশ্বস্ত সেবা</b><br>পছন্দ না হলে রিটার্ন করার রয়েছে দারুণ সুযোগ!<br><span class="fb">যেকোনো বিষয়ে আপনার মূল্যবান মতামত ও পরামর্শ দিয়ে আমাদের সহযোগিতা করুন।</span></div></div>
 </div></section>
+<section id="faq"><div class="w"><div class="sh"><span class="tag">প্রশ্ন ও উত্তর</span></div><h2>সচরাচর জিজ্ঞাসিত প্রশ্ন</h2><p class="sub">অর্ডারের আগে জেনে নিন</p><div class="faq">
+<details open class="rv"><summary>কীভাবে অর্ডার করব?</summary><p>পছন্দের পণ্যে “এখনই কিনুন” বা “কার্টে যোগ করুন” চাপুন। এরপর কার্টে গিয়ে নাম, মোবাইল, বিভাগ-জেলা-উপজেলা ও ঠিকানা দিয়ে হোয়াটসঅ্যাপে অর্ডার পাঠান।</p></details>
+<details class="rv"><summary>ডেলিভারি চার্জ কত?</summary><p>কার্টে জেলা ও উপজেলা নির্বাচন করলেই আপনার এলাকার ডেলিভারি চার্জ ও সর্বমোট হিসাব দেখতে পাবেন। অর্ডার নিশ্চিত করার আগে কুরিয়ারের রেট মিলিয়ে নেওয়া হয়।</p></details>
+<details class="rv"><summary>পেমেন্ট কীভাবে করব?</summary><p>ক্যাশ অন ডেলিভারি অথবা বিকাশ, নগদ ও রকেটে (Personal) সেন্ড মানি করতে পারবেন। পেমেন্ট নম্বর: <b class="pn"></b></p></details>
+<details class="rv"><summary>পছন্দ না হলে কী করব?</summary><p>পছন্দ না হলে রিটার্ন করার সুযোগ রয়েছে। বিস্তারিত জানতে ফোন বা হোয়াটসঅ্যাপে আমাদের সঙ্গে সরাসরি কথা বলুন।</p></details>
+<details class="rv"><summary>ডেলিভারি কতদিনে পাবো?</summary><p>আপনার এলাকার ঠিকানা জানালে সম্ভাব্য সময় জানিয়ে দেওয়া হবে। প্রশ্ন থাকলে সরাসরি ফোন বা হোয়াটসঅ্যাপ করুন।</p></details>
+</div></div></section>
 <section id="contact" class="alt"><div class="w"><div class="box"><h2>যোগাযোগ</h2><p>ফোন বা হোয়াটসঅ্যাপে সরাসরি কথা বলুন</p><p><b style="font-size:1.4rem">📞 <span class="ph">01744366000</span></b></p>
 <p><a class="btn tel" href="tel:01744366000">কল করুন</a> <a class="btn o wa" style="color:var(--g7);border-color:var(--g7)" href="https://wa.me/8801744366000" target="_blank" rel="noopener">হোয়াটসঅ্যাপ</a></p>
 <div class="payment-heading">পেমেন্ট নম্বর</div><div class="pbs"><span class="pg"><span class="pb" style="background:#e2136e"><svg viewBox="0 0 24 24"><path d="M12 2l9 4v6c0 5-4 8.5-9 10-5-1.5-9-5-9-10V6z"/></svg>bKash</span><span class="pa">Personal Account</span></span><span class="pg"><span class="pb" style="background:#f6921e"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>Nagad</span><span class="pa">Personal Account</span></span><span class="pg"><span class="pb" style="background:#8c3494"><svg viewBox="0 0 24 24"><path d="M12 2c4 3 5 8 3 13l-3 3-3-3c-2-5-1-10 3-13z"/></svg>Rocket</span></span></div><div class="paypill"><span class="pn-label">PAYMENT NUMBER</span><div class="pay-number-row"><strong class="pn">01312544515</strong><button type="button" id="copyPayContact" class="copy-pay" aria-label="পেমেন্ট নম্বর কপি করুন">▢ কপি করুন</button></div><small class="pay-hint">বিকাশ • নগদ • রকেট — Personal Account</small></div></div></div></section>
@@ -358,11 +410,14 @@ document.getElementById("pgrid").innerHTML=PDATA.map(nkCard).join("");
 <p style="margin-top:22px"><a class="btn gold" href="#products">পণ্য দেখুন</a> <a class="btn tel" href="tel:01744366000">📞 কল করুন</a></p></div>
 
 <div id="checkout" class="co" hidden><a class="back" href="#products">← পণ্যে ফিরে যান</a><h1>আপনার কার্ট ও ডেলিভারি</h1>
-<div id="lines"></div><div id="tot" class="tot"><span>মোট (ডেলিভারি চার্জ আলাদা)</span><span id="tv"></span></div>
+<div id="lines"></div><div id="tot" class="tot"><span>পণ্যের মূল্য</span><span id="tv"></span></div>
 <form id="f"><h2 style="text-align:left;margin-top:18px">ডেলিভারি ঠিকানা</h2>
 <label for="n">আপনার নাম</label><input id="n" name="name" type="text" required autocomplete="name">
 <label for="p">মোবাইল নম্বর</label><input id="p" name="phone" type="tel" required pattern="01[0-9]{9}" placeholder="01XXXXXXXXX" autocomplete="tel">
-<label for="a">জেলা / এলাকা</label><input id="a" name="area" type="text" required>
+<label for="dv">বিভাগ</label><select id="dv" name="division" required><option value="">বিভাগ নির্বাচন করুন</option></select>
+<div class="two"><div><label for="ds">জেলা</label><select id="ds" name="district" required disabled><option value="">আগে বিভাগ নির্বাচন করুন</option></select></div><div><label for="up">উপজেলা / থানা</label><select id="up" name="upazila" required disabled><option value="">আগে জেলা নির্বাচন করুন</option></select></div></div>
+<label for="ar">ইউনিয়ন / এলাকা (ঐচ্ছিক)</label><input id="ar" name="area" type="text" placeholder="ইউনিয়ন, ওয়ার্ড বা এলাকার নাম">
+<p id="lstat" class="lstat" role="status">জেলা-উপজেলার তালিকা লোড হচ্ছে…</p>
 <label for="ad">পূর্ণ ঠিকানা (বাসা/রোড/থানা)</label><textarea id="ad" name="addr" rows="3" required></textarea>
 <div class="pay"><label style="margin-bottom:0">পেমেন্ট পদ্ধতি</label>
 <label><input type="radio" name="pay" value="ক্যাশ অন ডেলিভারি" checked> 💵 ক্যাশ অন ডেলিভারি</label>
@@ -372,16 +427,18 @@ document.getElementById("pgrid").innerHTML=PDATA.map(nkCard).join("");
 <div class="paybox">বিকাশ / নগদ / রকেটে সেন্ড মানি করুন:<br><b class="pn">01312544515</b> <button class="btn" type="button" id="cp" style="padding:4px 12px;font-size:.8rem">কপি</button></div>
 <label for="tx">ট্রানজেকশন আইডি (পেমেন্ট করে থাকলে)</label><input id="tx" name="trx" type="text">
 <label for="nt">বিশেষ নোট (ঐচ্ছিক)</label><textarea id="nt" name="note" rows="2"></textarea>
+<div class="osum" id="osum" aria-live="polite"><h3>অর্ডারের হিসাব</h3><div class="r"><span>পণ্যের মূল্য</span><b id="o_sub"></b></div><div class="r"><span>ডেলিভারি চার্জ</span><b id="o_del">ঠিকানা নির্বাচন করুন</b></div><div class="r gt"><span>সর্বমোট</span><span id="o_gt"></span></div><p>ডেলিভারি চার্জের প্রাথমিক জোন-ভিত্তিক হিসাব; অর্ডার নিশ্চিতের আগে কুরিয়ার রেট মিলিয়ে নেওয়া হবে।</p></div>
 <p style="margin:18px 0 0"><button class="btn gold" type="submit" style="width:100%;padding:14px">✅ হোয়াটসঅ্যাপে অর্ডার পাঠান</button></p></form>
 <div id="ok" class="ok" hidden><b>প্রায় শেষ!</b> হোয়াটসঅ্যাপ খুলে "Send" চাপলেই অর্ডার আমাদের কাছে পৌঁছাবে। না খুললে নিচের বাটনে চাপুন।<p><a id="wa" class="btn" href="#" target="_blank" rel="noopener">হোয়াটসঅ্যাপ খুলুন</a></p></div></div>
 <footer class="ft"><div class="w fg"><div class="fl"><img class="flg" data-img="hlogo" alt="নিখুঁত অর্গানিক বিডি" width="180" height="94" loading="lazy">
 <p class="fm"><a href="#brand">আমাদের ব্র্যান্ড</a> - <a href="#about">আমাদের সম্পর্কে</a> - <a href="/honey.html">মধু</a> - <a href="/ghee.html">গাওয়া ঘি</a> - <a href="/oil.html">কালোজিরা ও প্রাকৃতিক তেল</a> - <a href="/superfood.html">সুপার ফুড</a> - <a href="#contact">যোগাযোগ</a></p></div>
-<div class="fr"><div class="fc"><div><h4>যোগাযোগ</h4><a class="tel" href="tel:01744366000">📞 <span class="ph">01744366000</span></a><a class="wa" href="https://wa.me/8801744366000" target="_blank" rel="noopener">💬 হোয়াটসঅ্যাপ</a><a href="mailto:nikhutorganicbd@gmail.com">✉️ nikhutorganicbd@gmail.com</a></div><div><h4>ইউজফুল লিংক</h4><a href="#products">পণ্য</a><a href="#offer">অফার</a><a href="#why">কেন আমরা</a></div><div><h4>হেড অফিস / আউটলেট</h4><span>শিশুপ্রতিবন্ধী ক্লিনিক, তৃতীয় তলা, শান্তিনগর, ঠাকুরগাঁও।</span></div></div>
+<div class="fr"><div class="fc"><div><h4>যোগাযোগ</h4><a class="tel" href="tel:01744366000">📞 <span class="ph">01744366000</span></a><a class="wa" href="https://wa.me/8801744366000" target="_blank" rel="noopener">💬 হোয়াটসঅ্যাপ</a><a href="mailto:nikhutorganicbd@gmail.com">✉️ nikhutorganicbd@gmail.com</a></div><div><h4>ইউজফুল লিংক</h4><a href="#products">পণ্য</a><a href="#offer">অফার</a><a href="#gallery">গ্যালারি</a><a href="#why">কেন আমরা</a><a href="#faq">প্রশ্নোত্তর</a></div><div><h4>হেড অফিস / আউটলেট</h4><span>শিশুপ্রতিবন্ধী ক্লিনিক, তৃতীয় তলা, শান্তিনগর, ঠাকুরগাঁও।</span></div></div>
 <div class="soc"><a href="https://www.facebook.com/nikhutorganicbd" target="_blank" rel="noopener" aria-label="Facebook" style="background:#1877f2">f</a><a href="https://www.youtube.com/@nikhutorganicbd" target="_blank" rel="noopener" aria-label="YouTube" style="background:#e62117">▶</a><a href="https://www.tiktok.com/@nikhutorganicbd" target="_blank" rel="noopener" aria-label="TikTok" style="background:#2b2b2b;border:1px solid #555">♪</a></div></div></div>
 <div class="w cp">© 2026 Nikhut Organic BD। সর্বস্বত্ব সংরক্ষিত।</div></footer>
 <div id="pop" class="pop" hidden><div class="pb2"><button type="button" id="px" aria-label="বন্ধ করুন">×</button><img data-img="combo" alt="কম্বো অফার"><a class="btn gold" href="#offer" id="pg">অফারটি দেখুন</a></div></div>
+<div id="lbx" class="lbx" hidden role="dialog" aria-label="ছবি"><button type="button" class="lx" id="lbx_x" aria-label="বন্ধ করুন">×</button><button type="button" class="lp" id="lbx_p" aria-label="আগের ছবি">‹</button><img id="lbx_i" alt=""><button type="button" class="ln" id="lbx_n" aria-label="পরের ছবি">›</button><div class="lc" id="lbx_c"></div></div>
 <div id="dov" class="dov" hidden></div><aside id="dr" class="dr" aria-label="ক্যাটেগরি"><div class="dh"><b>ক্যাটেগরি</b><button type="button" id="dx" aria-label="বন্ধ করুন">×</button></div><div id="dl"></div></aside>
-<a class="fab" href="#checkout">🛒 কার্ট (<span id="cc">০</span>)</a><div id="toast" class="toast" role="status"></div>
+<a class="fab" href="#checkout">🛒 কার্ট (<span id="cc">০</span>)</a><button type="button" class="totop" id="totop" aria-label="উপরে যান">↑</button><div id="toast" class="toast" role="status"></div>
 <div id="menu" class="msheet" hidden><a href="#" data-open="cat">☰ ক্যাটাগরি</a><a class="wa" href="https://wa.me/8801744366000" target="_blank" rel="noopener">💬 হোয়াটসঅ্যাপ</a></div>
 <nav class="bnav" aria-label="মূল মেনু">
 <a href="#products" aria-label="পণ্য"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><circle cx="17.5" cy="17.5" r="3.5"/></svg></a>
@@ -409,8 +466,8 @@ for(const k in cart)if(!items[k]||!(cart[k]>0))delete cart[k];
 const cnt=()=>Object.values(cart).reduce((a,b)=>a+b,0),tot=()=>Object.keys(cart).reduce((s,k)=>s+items[k].price*cart[k],0);
 function save(){try{localStorage.setItem("nk_cart",JSON.stringify(cart))}catch(e){}}
 function render(){const n=cnt();$("#cc").textContent=bn(n);$("#hcc").textContent=bn(n);$("#bc").textContent=bn(n);$("#bc").hidden=!n;const L=$("#lines");
- if(!n){L.innerHTML="<p>আপনার কার্ট খালি। <a class=back href=#products>পণ্য দেখুন</a></p>";$("#tot").hidden=true;return}
- $("#tot").hidden=false;$("#tv").textContent=fm(tot());
+ if(!n){L.innerHTML="<p>আপনার কার্ট খালি। <a class=back href=#products>পণ্য দেখুন</a></p>";$("#tot").hidden=true;window.updSum&&updSum();return}
+ $("#tot").hidden=false;$("#tv").textContent=fm(tot());window.updSum&&updSum();
  L.innerHTML=Object.keys(cart).map(k=>`<div class=row><div class=n>${items[k].name}<br><small>${fm(items[k].price)} / ${items[k].unit}</small></div><div class=q><button type=button data-k=${k} data-d=-1 aria-label="কমান">−</button><b>${bn(cart[k])}</b><button type=button data-k=${k} data-d=1 aria-label="বাড়ান">+</button></div></div>`).join("")}
 let tt;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),1400)}
 function closeMenu(){$("#menu").hidden=true;$("#mb").setAttribute("aria-expanded","false")}
@@ -426,7 +483,7 @@ function route(){const h=location.hash,c=h==="#checkout",a=h==="#about";$("#shop
 addEventListener("hashchange",route);
 $("#f").addEventListener("submit",e=>{e.preventDefault();if(!cnt()){toast("আগে পণ্য যোগ করুন");return}
  const f=new FormData(e.target),L=Object.keys(cart).map(k=>"• "+items[k].name+" ("+items[k].unit+") × "+bn(cart[k])+" = "+fm(items[k].price*cart[k])).join("\n");
- const m="🌿 নতুন অর্ডার | Nikhut Organic BD\n\n"+L+"\n\nমোট: "+fm(tot())+" (ডেলিভারি চার্জ আলাদা)\n\nনাম: "+f.get("name")+"\nমোবাইল: "+f.get("phone")+"\nজেলা/এলাকা: "+f.get("area")+"\nঠিকানা: "+f.get("addr")+"\nপেমেন্ট: "+f.get("pay")+(f.get("trx")?"\nট্রানজেকশন আইডি: "+f.get("trx"):"")+(f.get("note")?"\nনোট: "+f.get("note"):"");
+ const m="🌿 নতুন অর্ডার | Nikhut Organic BD\n\n"+L+"\n\nপণ্যের মূল্য: "+fm(tot())+"\nডেলিভারি চার্জ: "+(chargeFor()===null?"নিশ্চিত করতে হবে":fm(chargeFor()))+"\nসর্বমোট: "+(chargeFor()===null?fm(tot())+" + ডেলিভারি চার্জ":fm(tot()+chargeFor()))+"\n\nনাম: "+f.get("name")+"\nমোবাইল: "+f.get("phone")+"\nবিভাগ: "+LOC().div+"\nজেলা: "+LOC().dist+"\nউপজেলা/থানা: "+LOC().up+"\nইউনিয়ন/এলাকা: "+(f.get("area")||"উল্লেখ নেই")+"\nঠিকানা: "+f.get("addr")+"\nপেমেন্ট: "+f.get("pay")+(f.get("trx")?"\nট্রানজেকশন আইডি: "+f.get("trx"):"")+(f.get("note")?"\nনোট: "+f.get("note"):"");
  const u="https://wa.me/88"+PHONE+"?text="+encodeURIComponent(m);
  $("#wa").href=u;$("#ok").hidden=false;$("#ok").scrollIntoView({block:"center"});try{window.open(u,"_blank","noopener")}catch(x){}});
 $("#cp").onclick=()=>{try{navigator.clipboard.writeText(PAYNO);toast("নম্বর কপি হয়েছে ✓")}catch(x){toast("নম্বরটি চেপে ধরে কপি করুন")}};
@@ -456,6 +513,77 @@ $("#ofwa").href=wm("আসসালামু আলাইকুম, নিখু
 const sl=$("#sl");let si=0;setInterval(()=>{if(document.hidden||$("#shop").hidden)return;si=(si+1)%3;sl.scrollTo({left:sl.clientWidth*si,behavior:"smooth"})},4000);
 if(location.hash.length<2||location.hash==="#top")$("#pop").hidden=false;
 
+</script>
+<script>
+/* ===== নতুন: বিভাগ → জেলা → উপজেলা, ডেলিভারি চার্জ, গ্যালারি লাইটবক্স ও অন্যান্য ===== */
+(function(){
+const DATA_URL="https://iqbalhasandev.github.io/bangladesh-geo-json/bangladesh-geo.json";
+/* ✏️ ডেলিভারি চার্জ (টাকা): নিজের কুরিয়ারের রেট অনুযায়ী বদলান */
+const DELIVERY={insideDhaka:80,nearDhaka:120,outsideDhaka:150};
+/* নির্দিষ্ট উপজেলার আলাদা রেট: "জেলা:উপজেলা":টাকা  যেমন {"সিলেট:সিলেট সদর":100} */
+const DELIVERY_OVERRIDES={};
+let geo=[];
+const dv=$("#dv"),ds=$("#ds"),up=$("#up"),st=$("#lstat");
+const norm=x=>(x||"").toString().toLowerCase().replace(/[\s-]+/g,"").trim();
+const bp=t=>t.split(" (")[0];
+const lab=el=>el.selectedIndex>0?el.options[el.selectedIndex].textContent:"";
+function setOpts(el,items,ph){el.innerHTML="";const f=document.createElement("option");f.value="";f.textContent=ph;el.appendChild(f);items.forEach(i=>{const o=document.createElement("option");o.value=i.value;o.textContent=i.label;el.appendChild(o)})}
+window.LOC=function(){return{div:bp(lab(dv))||"—",dist:bp(lab(ds))||"—",up:up.value==="manual"?"ঠিকানায় উল্লেখ":(bp(lab(up))||"—")}};
+window.chargeFor=function(){
+ if(!ds.value||!up.value)return null;
+ const dl=bp(lab(ds)),ul=bp(lab(up)),ov=DELIVERY_OVERRIDES[dl+":"+ul];
+ if(Number.isFinite(ov))return ov;
+ if(norm(dl)==="ঢাকা"){
+  const u=norm(lab(up)),core=["dhanmondi","ধানমন্ডি","gulshan","গুলশান","banani","বনানী","motijheel","মতিঝিল","mirpur","মিরপুর","uttara","উত্তরা","pallabi","পল্লবী","tejgaon","তেজগাঁও","ramna","রমনা","badda","বাড্ডা","khilgaon","খিলগাঁও","mohammadpur","মোহাম্মদপুর","jatrabari","যাত্রাবাড়ী","dhakasadar","ঢাকাসদর"];
+  return core.some(x=>u.includes(norm(x)))?DELIVERY.insideDhaka:DELIVERY.nearDhaka}
+ return DELIVERY.outsideDhaka};
+window.updSum=function(){
+ const box=$("#osum");if(!box)return;const n=cnt();box.hidden=!n;if(!n)return;
+ const sub=tot(),ch=chargeFor();
+ $("#o_sub").textContent=fm(sub);
+ $("#o_del").textContent=ch===null?"ঠিকানা নির্বাচন করুন":fm(ch);
+ $("#o_gt").textContent=ch===null?fm(sub)+" + ডেলিভারি":fm(sub+ch)};
+async function load(){
+ try{const r=await fetch(DATA_URL,{cache:"force-cache"});if(!r.ok)throw 0;geo=await r.json();
+  setOpts(dv,geo.map((x,i)=>({value:String(i),label:x.bn_name+" ("+x.name+")"})),"বিভাগ নির্বাচন করুন");
+  st.textContent="বাংলাদেশের সব বিভাগ, জেলা ও উপজেলার তালিকা প্রস্তুত।"}
+ catch(e){
+  st.textContent="স্বয়ংক্রিয় তালিকা লোড হয়নি; জেলা বেছে উপজেলার নাম ঠিকানায় লিখুন। ইন্টারনেট ঠিক হলে পেজ রিফ্রেশ করুন।";
+  const fb={"বরিশাল":["বরগুনা","বরিশাল","ভোলা","ঝালকাঠি","পটুয়াখালী","পিরোজপুর"],"চট্টগ্রাম":["বান্দরবান","ব্রাহ্মণবাড়িয়া","চাঁদপুর","চট্টগ্রাম","কক্সবাজার","কুমিল্লা","ফেনী","খাগড়াছড়ি","লক্ষ্মীপুর","নোয়াখালী","রাঙ্গামাটি"],"ঢাকা":["ঢাকা","ফরিদপুর","গাজীপুর","গোপালগঞ্জ","কিশোরগঞ্জ","মাদারীপুর","মানিকগঞ্জ","মুন্সীগঞ্জ","নারায়ণগঞ্জ","নরসিংদী","রাজবাড়ী","শরীয়তপুর","টাঙ্গাইল"],"খুলনা":["বাগেরহাট","চুয়াডাঙ্গা","যশোর","ঝিনাইদহ","খুলনা","কুষ্টিয়া","মাগুরা","মেহেরপুর","নড়াইল","সাতক্ষীরা"],"ময়মনসিংহ":["জামালপুর","ময়মনসিংহ","নেত্রকোণা","শেরপুর"],"রাজশাহী":["বগুড়া","জয়পুরহাট","নওগাঁ","নাটোর","চাঁপাইনবাবগঞ্জ","পাবনা","রাজশাহী","সিরাজগঞ্জ"],"রংপুর":["দিনাজপুর","গাইবান্ধা","কুড়িগ্রাম","লালমনিরহাট","নীলফামারী","পঞ্চগড়","রংপুর","ঠাকুরগাঁও"],"সিলেট":["হবিগঞ্জ","মৌলভীবাজার","সুনামগঞ্জ","সিলেট"]};
+  geo=Object.entries(fb).map(([b,d])=>({bn_name:b,name:b,districts:d.map(x=>({bn_name:x,name:x,upazilas:[]}))}));
+  setOpts(dv,geo.map((x,i)=>({value:String(i),label:x.bn_name})),"বিভাগ নির্বাচন করুন")}}
+dv.addEventListener("change",()=>{
+ up.disabled=true;setOpts(up,[],"আগে জেলা নির্বাচন করুন");
+ if(!dv.value){ds.disabled=true;setOpts(ds,[],"আগে বিভাগ নির্বাচন করুন");updSum();return}
+ ds.disabled=false;const L=geo[+dv.value].districts||[];
+ setOpts(ds,L.map((x,i)=>({value:String(i),label:x.bn_name+(x.name&&x.name!==x.bn_name?" ("+x.name+")":"")})),"জেলা নির্বাচন করুন");updSum()});
+ds.addEventListener("change",()=>{
+ if(!ds.value){up.disabled=true;setOpts(up,[],"আগে জেলা নির্বাচন করুন");updSum();return}
+ const d=(geo[+dv.value].districts||[])[+ds.value],U=(d&&d.upazilas)||[];up.disabled=false;
+ setOpts(up,U.map((x,i)=>({value:String(i),label:x.bn_name+(x.name&&x.name!==x.bn_name?" ("+x.name+")":"")})),"উপজেলা / থানা নির্বাচন করুন");
+ if(!U.length){const o=document.createElement("option");o.value="manual";o.textContent="উপজেলার নাম ঠিকানায় লিখুন";up.appendChild(o)}updSum()});
+up.addEventListener("change",updSum);
+/* গ্রাহকের তথ্য মনে রাখা (শুধু এই ডিভাইসে) */
+try{const c=JSON.parse(localStorage.getItem("nk_cust")||"null");if(c){["n","p","ar","ad"].forEach(k=>{const e=document.getElementById(k);if(e&&c[k])e.value=c[k]})}}catch(e){}
+$("#f").addEventListener("submit",()=>{try{const c={};["n","p","ar","ad"].forEach(k=>c[k]=document.getElementById(k).value);localStorage.setItem("nk_cust",JSON.stringify(c))}catch(e){}});
+load();updSum();
+/* গ্যালারি লাইটবক্স */
+const gi=[...document.querySelectorAll("#gx img")],lb=$("#lbx"),li=$("#lbx_i"),lc=$("#lbx_c");let k=0,sx=0;
+function show(i){k=(i+gi.length)%gi.length;li.src=gi[k].src;li.alt=gi[k].alt;lc.textContent=gi[k].alt+" · "+bn(k+1)+"/"+bn(gi.length);lb.hidden=false;document.body.style.overflow="hidden"}
+function hide(){lb.hidden=true;document.body.style.overflow=""}
+gi.forEach((im,i)=>im.addEventListener("click",()=>show(i)));
+$("#lbx_x").onclick=hide;$("#lbx_p").onclick=()=>show(k-1);$("#lbx_n").onclick=()=>show(k+1);
+lb.addEventListener("click",e=>{if(e.target===lb)hide()});
+addEventListener("keydown",e=>{if(lb.hidden)return;if(e.key==="Escape")hide();if(e.key==="ArrowLeft")show(k-1);if(e.key==="ArrowRight")show(k+1)});
+lb.addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:true});
+lb.addEventListener("touchend",e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)show(d<0?k+1:k-1)},{passive:true});
+/* উপরে যান বাটন */
+const tt=$("#totop");addEventListener("scroll",()=>tt.classList.toggle("show",scrollY>600&&!$("#shop").hidden),{passive:true});
+tt.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+/* স্ক্রলে ধীরে ফুটে ওঠা অ্যানিমেশন */
+const R=document.querySelectorAll(".rv");
+if("IntersectionObserver" in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});R.forEach(r=>io.observe(r))}else R.forEach(r=>r.classList.add("in"));
+})();
 </script>
 <script>
 /* 🖼 ছবির ডেটা: এখানে হাত দেবেন না */
